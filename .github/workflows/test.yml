@@ -1,0 +1,17 @@
+name: Simple Test Workflow
+
+on: [push, pull_request]
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Hello World
+      run: echo "Hello, GitHub Actions!"
+      
+    - name: check java lint
+      run: echo "Потипу какойта этап который проверяет код"
+      
+    - name: Test java
+      run: echo "Потипу  еще один этап, который тестировает ваш код "

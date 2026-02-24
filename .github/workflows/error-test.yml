@@ -1,0 +1,20 @@
+name: Error Test Workflow
+
+on: [push]
+
+jobs:
+  test-error:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Create test file
+      run: echo "test content" > test.txt
+      
+    - name: Read non-existent file (will fail)
+      run: cat nonexistent.txt
+      
+    - name: This step will not run
+      run: echo "This will not execute"
